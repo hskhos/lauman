@@ -1,0 +1,39 @@
+<h1>Edit Laundry Order</h1>
+
+<%= form_with model: @order do |form| %>
+
+  <div>
+    <%= form.label :customer_name %>
+    <%= form.text_field :customer_name %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :clothes %>
+    <%= form.text_area :clothes %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :amount %>
+    <%= form.number_field :amount, step: 0.01 %>
+  </div>
+
+  <br>
+
+  <div>
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <br>
+
+  <%= form.submit "Update Order" %>
+
+<% end %>
+
+<br>
+
+<%= link_to "Back", orders_path %>

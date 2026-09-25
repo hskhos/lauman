@@ -1,0 +1,29 @@
+<h1>Laundry Orders</h1>
+
+<%= link_to "New Order", new_order_path %>
+
+<hr>
+
+<% @orders.each do |order| %>
+  <div>
+    <h2><%= order.customer_name %></h2>
+
+    <p>
+      Clothes: <%= order.clothes %>
+    </p>
+
+    <p>
+      Amount: €<%= order.amount %>
+    </p>
+
+    <p>
+      Status: <%= order.status %>
+    </p>
+
+    <%= link_to "View", order_path(order) %>
+    <%= link_to "Edit", edit_order_path(order) %>
+    <%= button_to "Delete", order_path(order), method: :delete %>
+  </div>
+
+  <hr>
+<% end %>
